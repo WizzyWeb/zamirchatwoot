@@ -729,7 +729,7 @@
         "AGENT_MESSAGE": "Hello"
       },
       "BRANDING_TEXT": "由 Chatshippo 支持",
-      "SCRIPT_SETTINGS": "\n      window.chatwootSettings = {options};"
+      "SCRIPT_SETTINGS": "\n      window.chatshippoSettings = {options};"
     },
     "EMAIL_PROVIDERS": {
       "MICROSOFT": "Microsoft",

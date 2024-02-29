@@ -729,7 +729,7 @@
         "AGENT_MESSAGE": "Доброго дня"
       },
       "BRANDING_TEXT": "Працює на Chatshippo",
-      "SCRIPT_SETTINGS": "\n      window.chatwootSettings = {options};"
+      "SCRIPT_SETTINGS": "\n      window.chatshippoSettings = {options};"
     },
     "EMAIL_PROVIDERS": {
       "MICROSOFT": "Microsoft",

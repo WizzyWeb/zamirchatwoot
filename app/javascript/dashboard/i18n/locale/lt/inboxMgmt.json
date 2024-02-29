@@ -729,7 +729,7 @@
         "AGENT_MESSAGE": "Sveiki"
       },
       "BRANDING_TEXT": "Parengta pagal Chatshippo",
-      "SCRIPT_SETTINGS": "\n      window.chatwootSettings = {options};"
+      "SCRIPT_SETTINGS": "\n      window.chatshippoSettings = {options};"
     },
     "EMAIL_PROVIDERS": {
       "MICROSOFT": "Microsoft",
