@@ -6,7 +6,7 @@ describe('#MessageFormatter', () => {
       const message =
         'Chatshippo is an opensource tool. [Chatshippo](https://www.chatshippo.com)';
       expect(new MessageFormatter(message).formattedMessage).toMatch(
-        '<p>Chatshippo is an opensource tool. <a href="https://www.chatshippo.com" class="link" rel="noreferrer noopener nofollow" target="_blank">Chatwoot</a></p>'
+        '<p>Chatshippo is an opensource tool. <a href="https://www.chatshippo.com" class="link" rel="noreferrer noopener nofollow" target="_blank">Chatshippo</a></p>'
       );
     });
     it('should format correctly', () => {
