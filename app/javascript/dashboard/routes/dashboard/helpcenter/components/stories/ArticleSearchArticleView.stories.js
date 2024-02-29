@@ -29,5 +29,5 @@ const Template = (args, { argTypes }) => ({
 export const ArticleHeaderView = Template.bind({});
 ArticleHeaderView.args = {
   title: 'Insert article',
-  url: 'https://staging.chatshippo.com/hc/home-rental-app/articles/filter-your-housing-search-results-0',
+  url: 'https://staging.mycodek.com/hc/home-rental-app/articles/filter-your-housing-search-results-0',
 };

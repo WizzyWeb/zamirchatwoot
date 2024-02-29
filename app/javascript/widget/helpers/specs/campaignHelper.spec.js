@@ -13,29 +13,29 @@ describe('#Campaigns Helper', () => {
     it('returns correct value if a valid URL is passed', () => {
       expect(
         isPatternMatchingWithURL(
-          'https://chatshippo.com/pricing*',
-          'https://chatshippo.com/pricing/'
+          'https://mycodek.com/pricing*',
+          'https://mycodek.com/pricing/'
         )
       ).toBe(true);
 
       expect(
         isPatternMatchingWithURL(
-          'https://*.chatshippo.com/pricing/',
-          'https://app.chatshippo.com/pricing/'
+          'https://*.mycodek.com/pricing/',
+          'https://app.mycodek.com/pricing/'
         )
       ).toBe(true);
 
       expect(
         isPatternMatchingWithURL(
-          'https://{*.}?chatshippo.com/pricing?test=true',
-          'https://app.chatshippo.com/pricing/?test=true'
+          'https://{*.}?mycodek.com/pricing?test=true',
+          'https://app.mycodek.com/pricing/?test=true'
         )
       ).toBe(true);
 
       expect(
         isPatternMatchingWithURL(
-          'https://{*.}?chatshippo.com/pricing*\\?*',
-          'https://chatshippo.com/pricing/?test=true'
+          'https://{*.}?mycodek.com/pricing*\\?*',
+          'https://mycodek.com/pricing/?test=true'
         )
       ).toBe(true);
     });
@@ -48,13 +48,13 @@ describe('#Campaigns Helper', () => {
           id: 1,
           timeOnPage: 3,
           triggerOnlyDuringBusinessHours: false,
-          url: 'https://www.chatshippo.com/pricing',
+          url: 'https://www.mycodek.com/pricing',
         },
         {
           id: 2,
           triggerOnlyDuringBusinessHours: false,
           timeOnPage: 6,
-          url: 'https://www.chatshippo.com/about',
+          url: 'https://www.mycodek.com/about',
         },
       ]);
     });
@@ -67,23 +67,23 @@ describe('#Campaigns Helper', () => {
             {
               id: 1,
               timeOnPage: 3,
-              url: 'https://www.chatshippo.com/pricing',
+              url: 'https://www.mycodek.com/pricing',
               triggerOnlyDuringBusinessHours: false,
             },
             {
               id: 2,
               timeOnPage: 6,
-              url: 'https://www.chatshippo.com/about',
+              url: 'https://www.mycodek.com/about',
               triggerOnlyDuringBusinessHours: false,
             },
           ],
-          currentURL: 'https://www.chatshippo.com/about/',
+          currentURL: 'https://www.mycodek.com/about/',
         })
       ).toStrictEqual([
         {
           id: 2,
           timeOnPage: 6,
-          url: 'https://www.chatshippo.com/about',
+          url: 'https://www.mycodek.com/about',
           triggerOnlyDuringBusinessHours: false,
         },
       ]);
@@ -95,24 +95,24 @@ describe('#Campaigns Helper', () => {
             {
               id: 1,
               timeOnPage: 3,
-              url: 'https://www.chatshippo.com/pricing',
+              url: 'https://www.mycodek.com/pricing',
               triggerOnlyDuringBusinessHours: false,
             },
             {
               id: 2,
               timeOnPage: 6,
-              url: 'https://www.chatshippo.com/about',
+              url: 'https://www.mycodek.com/about',
               triggerOnlyDuringBusinessHours: true,
             },
           ],
-          currentURL: 'https://www.chatshippo.com/about/',
+          currentURL: 'https://www.mycodek.com/about/',
           isInBusinessHours: true,
         })
       ).toStrictEqual([
         {
           id: 2,
           timeOnPage: 6,
-          url: 'https://www.chatshippo.com/about',
+          url: 'https://www.mycodek.com/about',
           triggerOnlyDuringBusinessHours: true,
         },
       ]);
@@ -124,17 +124,17 @@ describe('#Campaigns Helper', () => {
             {
               id: 1,
               timeOnPage: 3,
-              url: 'https://www.chatshippo.com/pricing',
+              url: 'https://www.mycodek.com/pricing',
               triggerOnlyDuringBusinessHours: true,
             },
             {
               id: 2,
               timeOnPage: 6,
-              url: 'https://www.chatshippo.com/about',
+              url: 'https://www.mycodek.com/about',
               triggerOnlyDuringBusinessHours: true,
             },
           ],
-          currentURL: 'https://www.chatshippo.com/about/',
+          currentURL: 'https://www.mycodek.com/about/',
           isInBusinessHours: false,
         })
       ).toStrictEqual([]);

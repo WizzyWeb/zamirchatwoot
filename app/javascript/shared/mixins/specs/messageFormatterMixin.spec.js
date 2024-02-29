@@ -9,9 +9,9 @@ describe('messageFormatterMixin', () => {
     };
     const wrapper = shallowMount(Component);
     const message =
-      '<b>Chatshippo is an opensource tool. https://www.chatshippo.com</b>';
+      '<b>CEDUK is an opensource tool. https://www.mycodek.com</b>';
     expect(wrapper.vm.getPlainText(message)).toMatch(
-      'Chatshippo is an opensource tool. https://www.chatshippo.com'
+      'CEDUK is an opensource tool. https://www.mycodek.com'
     );
   });
 });

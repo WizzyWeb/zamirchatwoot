@@ -4,16 +4,16 @@ describe('#MessageFormatter', () => {
   describe('content with links', () => {
     it('should format correctly', () => {
       const message =
-        'Chatshippo is an opensource tool. [Chatshippo](https://www.chatshippo.com)';
+        'CEDUK is an opensource tool. [CEDUK](https://www.mycodek.com)';
       expect(new MessageFormatter(message).formattedMessage).toMatch(
-        '<p>Chatshippo is an opensource tool. <a href="https://www.chatshippo.com" class="link" rel="noreferrer noopener nofollow" target="_blank">Chatshippo</a></p>'
+        '<p>CEDUK is an opensource tool. <a href="https://www.mycodek.com" class="link" rel="noreferrer noopener nofollow" target="_blank">CEDUK</a></p>'
       );
     });
     it('should format correctly', () => {
       const message =
-        'Chatshippo is an opensource tool. https://www.chatshippo.com';
+        'CEDUK is an opensource tool. https://www.mycodek.com';
       expect(new MessageFormatter(message).formattedMessage).toMatch(
-        '<p>Chatshippo is an opensource tool. <a href="https://www.chatshippo.com" class="link" rel="noreferrer noopener nofollow" target="_blank">https://www.chatshippo.com</a></p>'
+        '<p>CEDUK is an opensource tool. <a href="https://www.mycodek.com" class="link" rel="noreferrer noopener nofollow" target="_blank">https://www.mycodek.com</a></p>'
       );
     });
   });
@@ -31,32 +31,32 @@ describe('#MessageFormatter', () => {
   describe('content with image and has "cw_image_height" query at the end of URL', () => {
     it('should set image height correctly', () => {
       const message =
-        'Chatshippo is an opensource tool. ![](http://chatshippo.com/chatwoot.png?cw_image_height=24px)';
+        'CEDUK is an opensource tool. ![](http://mycodek.com/chatwoot.png?cw_image_height=24px)';
       expect(new MessageFormatter(message).formattedMessage).toMatch(
-        '<p>Chatshippo is an opensource tool. <img src="http://chatshippo.com/chatwoot.png?cw_image_height=24px" alt="" style="height: 24px;" /></p>'
+        '<p>CEDUK is an opensource tool. <img src="http://mycodek.com/chatwoot.png?cw_image_height=24px" alt="" style="height: 24px;" /></p>'
       );
     });
 
     it('should set image height correctly if its original size', () => {
       const message =
-        'Chatshippo is an opensource tool. ![](http://chatshippo.com/chatwoot.png?cw_image_height=auto)';
+        'CEDUK is an opensource tool. ![](http://mycodek.com/chatwoot.png?cw_image_height=auto)';
       expect(new MessageFormatter(message).formattedMessage).toMatch(
-        '<p>Chatshippo is an opensource tool. <img src="http://chatshippo.com/chatwoot.png?cw_image_height=auto" alt="" style="height: auto;" /></p>'
+        '<p>CEDUK is an opensource tool. <img src="http://mycodek.com/chatwoot.png?cw_image_height=auto" alt="" style="height: auto;" /></p>'
       );
     });
 
     it('should not set height', () => {
       const message =
-        'Chatshippo is an opensource tool. ![](http://chatshippo.com/chatwoot.png)';
+        'CEDUK is an opensource tool. ![](http://mycodek.com/chatwoot.png)';
       expect(new MessageFormatter(message).formattedMessage).toMatch(
-        '<p>Chatshippo is an opensource tool. <img src="http://chatshippo.com/chatwoot.png" alt="" /></p>'
+        '<p>CEDUK is an opensource tool. <img src="http://mycodek.com/chatwoot.png" alt="" /></p>'
       );
     });
   });
 
   describe('tweets', () => {
     it('should return the same string if not tags or @mentions', () => {
-      const message = 'Chatshippo is an opensource tool';
+      const message = 'CEDUK is an opensource tool';
       expect(new MessageFormatter(message).formattedMessage).toMatch(message);
     });
 
@@ -82,7 +82,7 @@ describe('#MessageFormatter', () => {
 
   describe('private notes', () => {
     it('should return the same string if not tags or @mentions', () => {
-      const message = 'Chatshippo is an opensource tool';
+      const message = 'CEDUK is an opensource tool';
       expect(new MessageFormatter(message).formattedMessage).toMatch(message);
     });
 
@@ -105,9 +105,9 @@ describe('#MessageFormatter', () => {
   describe('plain text content', () => {
     it('returns the plain text without HTML', () => {
       const message =
-        '<b>Chatshippo is an opensource tool. https://www.chatshippo.com</b>';
+        '<b>CEDUK is an opensource tool. https://www.mycodek.com</b>';
       expect(new MessageFormatter(message).plainText).toMatch(
-        'Chatshippo is an opensource tool. https://www.chatshippo.com'
+        'CEDUK is an opensource tool. https://www.mycodek.com'
       );
     });
   });

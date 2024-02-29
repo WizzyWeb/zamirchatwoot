@@ -71,7 +71,7 @@ describe('#URL Helpers', () => {
 
   describe('isValidURL', () => {
     it('should return true if valid url is passed', () => {
-      expect(isValidURL('https://chatshippo.com')).toBe(true);
+      expect(isValidURL('https://mycodek.com')).toBe(true);
     });
     it('should return false if invalid url is passed', () => {
       expect(isValidURL('alert.window')).toBe(false);
@@ -168,7 +168,7 @@ describe('#URL Helpers', () => {
 
   describe('hasValidAvatarUrl', () => {
     test('should return true for valid non-Gravatar URL', () => {
-      expect(hasValidAvatarUrl('https://chatshippo.com/avatar.jpg')).toBe(true);
+      expect(hasValidAvatarUrl('https://mycodek.com/avatar.jpg')).toBe(true);
     });
 
     test('should return false for a Gravatar URL (www.gravatar.com)', () => {

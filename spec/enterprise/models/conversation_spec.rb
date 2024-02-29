@@ -8,7 +8,7 @@ RSpec.describe Conversation, type: :model do
   describe 'conversation sentiments' do
     include ActiveJob::TestHelper
 
-    let(:conversation) { create(:conversation, additional_attributes: { referer: 'https://www.chatshippo.com/' }) }
+    let(:conversation) { create(:conversation, additional_attributes: { referer: 'https://www.mycodek.com/' }) }
 
     before do
       10.times do

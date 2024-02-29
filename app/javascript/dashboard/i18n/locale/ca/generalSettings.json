@@ -48,10 +48,10 @@
         "CUSTOM_EMAIL_DOMAIN_ENABLED": "Ara podeu rebre correus electrònics al vostre domini personalitzat."
       }
     },
-    "UPDATE_CHATWOOT": "L'actualització %{latestChatwootVersion} per Chatshippo està disponible. Si us plau, actualitza l'instancia.",
+    "UPDATE_CHATWOOT": "L'actualització %{latestChatwootVersion} per CEDUK està disponible. Si us plau, actualitza l'instancia.",
     "LEARN_MORE": "Learn more",
-    "PAYMENT_PENDING": "Your payment is pending. Please update your payment information to continue using Chatshippo",
-    "LIMITS_UPGRADE": "Your account has exceeded the usage limits, please upgrade your plan to continue using Chatshippo",
+    "PAYMENT_PENDING": "Your payment is pending. Please update your payment information to continue using CEDUK",
+    "LIMITS_UPGRADE": "Your account has exceeded the usage limits, please upgrade your plan to continue using CEDUK",
     "OPEN_BILLING": "Open billing"
   },
   "FORMS": {

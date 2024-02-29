@@ -4,8 +4,8 @@ describe('#mutations', () => {
   describe('#SET_REFERRER_HOST', () => {
     it('sets referrer host properly', () => {
       const state = { referrerHost: '' };
-      mutations.SET_REFERRER_HOST(state, 'www.chatshippo.com');
-      expect(state.referrerHost).toEqual('www.chatshippo.com');
+      mutations.SET_REFERRER_HOST(state, 'www.mycodek.com');
+      expect(state.referrerHost).toEqual('www.mycodek.com');
     });
   });
 

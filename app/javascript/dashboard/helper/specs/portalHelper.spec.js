@@ -4,11 +4,11 @@ describe('PortalHelper', () => {
   describe('buildPortalURL', () => {
     it('returns the correct url', () => {
       window.chatwootConfig = {
-        hostURL: 'https://app.chatshippo.com',
-        helpCenterURL: 'https://help.chatshippo.com',
+        hostURL: 'https://app.mycodek.com',
+        helpCenterURL: 'https://help.mycodek.com',
       };
       expect(buildPortalURL('handbook')).toEqual(
-        'https://help.chatshippo.com/hc/handbook'
+        'https://help.mycodek.com/hc/handbook'
       );
       window.chatwootConfig = {};
     });
@@ -17,12 +17,12 @@ describe('PortalHelper', () => {
   describe('buildPortalArticleURL', () => {
     it('returns the correct url', () => {
       window.chatwootConfig = {
-        hostURL: 'https://app.chatshippo.com',
-        helpCenterURL: 'https://help.chatshippo.com',
+        hostURL: 'https://app.mycodek.com',
+        helpCenterURL: 'https://help.mycodek.com',
       };
       expect(
         buildPortalArticleURL('handbook', 'culture', 'fr', 'article-slug')
-      ).toEqual('https://help.chatshippo.com/hc/handbook/articles/article-slug');
+      ).toEqual('https://help.mycodek.com/hc/handbook/articles/article-slug');
       window.chatwootConfig = {};
     });
   });

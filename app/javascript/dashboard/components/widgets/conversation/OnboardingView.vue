@@ -19,7 +19,7 @@
           </p>
           <p v-if="globalConfig.installationName === 'Chatwoot'">
             <a
-              href="https://www.chatshippo.com/changelog"
+              href="https://www.mycodek.com/changelog"
               target="_blank"
               rel="noopener nofollow noreferrer"
               class="onboarding--link"

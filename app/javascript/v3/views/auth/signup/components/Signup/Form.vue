@@ -142,9 +142,9 @@ export default {
     ...mapGetters({ globalConfig: 'globalConfig/get' }),
     termsLink() {
       return this.$t('REGISTER.TERMS_ACCEPT')
-        .replace('https://www.chatshippo.com/terms', this.globalConfig.termsURL)
+        .replace('https://www.mycodek.com/terms', this.globalConfig.termsURL)
         .replace(
-          'https://www.chatshippo.com/privacy-policy',
+          'https://www.mycodek.com/privacy-policy',
           this.globalConfig.privacyURL
         );
     },

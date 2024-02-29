@@ -26,7 +26,7 @@ RSpec.describe AutomationRule do
         actions: [
           {
             action_name: :send_message,
-            action_params: ['Welcome to the Chatshippo platform.']
+            action_params: ['Welcome to the CEDUK platform.']
           },
           {
             action_name: :assign_team,

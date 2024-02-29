@@ -48,10 +48,10 @@
         "CUSTOM_EMAIL_DOMAIN_ENABLED": "اکنون می‌توانید ایمیل‌ها را در دامنه سفارشی خود دریافت کنید."
       }
     },
-    "UPDATE_CHATWOOT": "به روزرسانی%{latestChatwootVersion} برای Chatshippo در دسترس است. لطفا نمونه خود را به روز کنید.",
+    "UPDATE_CHATWOOT": "به روزرسانی%{latestChatwootVersion} برای CEDUK در دسترس است. لطفا نمونه خود را به روز کنید.",
     "LEARN_MORE": "بیشتر بدانید",
-    "PAYMENT_PENDING": "Your payment is pending. Please update your payment information to continue using Chatshippo",
-    "LIMITS_UPGRADE": "Your account has exceeded the usage limits, please upgrade your plan to continue using Chatshippo",
+    "PAYMENT_PENDING": "Your payment is pending. Please update your payment information to continue using CEDUK",
+    "LIMITS_UPGRADE": "Your account has exceeded the usage limits, please upgrade your plan to continue using CEDUK",
     "OPEN_BILLING": "Open billing"
   },
   "FORMS": {

@@ -17,7 +17,7 @@ describe('#actions', () => {
         { commit },
         {
           websiteToken: 'XDsafmADasd',
-          currentURL: 'https://chatshippo.com',
+          currentURL: 'https://mycodek.com',
           isInBusinessHours: true,
         }
       );
@@ -31,7 +31,7 @@ describe('#actions', () => {
             {
               id: 11,
               timeOnPage: '20',
-              url: 'https://chatshippo.com',
+              url: 'https://mycodek.com',
               triggerOnlyDuringBusinessHours: false,
             },
           ],
@@ -45,7 +45,7 @@ describe('#actions', () => {
         { commit },
         {
           websiteToken: 'XDsafmADasd',
-          currentURL: 'https://www.chatshippo.com',
+          currentURL: 'https://www.mycodek.com',
           isInBusinessHours: true,
         }
       );
@@ -55,7 +55,7 @@ describe('#actions', () => {
   describe('#initCampaigns', () => {
     const actionParams = {
       websiteToken: 'XDsafmADasd',
-      currentURL: 'https://chatshippo.com',
+      currentURL: 'https://mycodek.com',
     };
     it('sends correct actions if campaigns are empty', async () => {
       await actions.initCampaigns(
@@ -77,7 +77,7 @@ describe('#actions', () => {
             {
               id: 11,
               timeOnPage: '20',
-              url: 'https://chatshippo.com',
+              url: 'https://mycodek.com',
               triggerOnlyDuringBusinessHours: false,
             },
           ],

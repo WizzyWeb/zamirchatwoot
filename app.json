@@ -1,9 +1,9 @@
 {
-  "name": "Chatshippo",
-  "description": "Chatshippo is a customer support tool for instant messaging channels",
-  "website": "https://www.chatshippo.com/",
+  "name": "CEDUK",
+  "description": "CEDUK is a customer support tool for instant messaging channels",
+  "website": "https://www.mycodek.com/",
   "repository": "https://github.com/chatwoot/chatwoot",
-  "logo": "https://app.chatshippo.com/brand-assets/logo_thumbnail.svg",
+  "logo": "https://app.mycodek.com/brand-assets/logo_thumbnail.svg",
   "keywords": [
     "live chat",
     "customer support",

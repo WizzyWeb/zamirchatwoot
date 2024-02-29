@@ -1,19 +1,19 @@
 {
   "swagger": "2.0",
   "info": {
-    "description": "This is the API documentation for Chatshippo server.",
+    "description": "This is the API documentation for CEDUK server.",
     "version": "1.0.0",
     "title": "Chatwoot",
-    "termsOfService": "https://www.chatshippo.com/terms-of-service/",
+    "termsOfService": "https://www.mycodek.com/terms-of-service/",
     "contact": {
-      "email": "hello@chatshippo.com"
+      "email": "hello@mycodek.com"
     },
     "license": {
       "name": "MIT License",
       "url": "https://opensource.org/licenses/MIT"
     }
   },
-  "host": "app.chatshippo.com",
+  "host": "app.mycodek.com",
   "basePath": "/",
   "schemes": [
     "https"
@@ -2893,7 +2893,7 @@
         ],
         "operationId": "newConversation",
         "summary": "Create New Conversation",
-        "description": "Creating a conversation in Chatshippo requires a source id. \n\n Learn more about source_id: https://github.com/chatwoot/chatwoot/wiki/Building-on-Top-of-Chatwoot:-Importing-Existing-Contacts-and-Creating-Conversations",
+        "description": "Creating a conversation in CEDUK requires a source id. \n\n Learn more about source_id: https://github.com/chatwoot/chatwoot/wiki/Building-on-Top-of-Chatwoot:-Importing-Existing-Contacts-and-Creating-Conversations",
         "security": [
           {
             "userApiKey": [
@@ -6032,7 +6032,7 @@
         },
         "pubsub_token": {
           "type": "string",
-          "description": "The token to be used to connect to Chatshippo websocket"
+          "description": "The token to be used to connect to CEDUK websocket"
         }
       }
     },
@@ -6589,7 +6589,7 @@
         "homepage_link": {
           "type": "string",
           "description": "link to main dashboard",
-          "example": "https://www.chatshippo.com/"
+          "example": "https://www.mycodek.com/"
         },
         "name": {
           "type": "string",
@@ -7159,7 +7159,7 @@
       "name": "source_id",
       "required": true,
       "type": "string",
-      "description": "Id of the session for which the conversation is created.\n\n\n\n Source Ids can be obtained through contactable inboxes API or via generated.<br/><br/>Website: Chatshippo generated string which can be obtained from webhook events. <br/> Phone Channels(Twilio): Phone number in e164 format <br/> Email Channels: Contact Email address <br/> API Channel: Any Random String"
+      "description": "Id of the session for which the conversation is created.\n\n\n\n Source Ids can be obtained through contactable inboxes API or via generated.<br/><br/>Website: CEDUK generated string which can be obtained from webhook events. <br/> Phone Channels(Twilio): Phone number in e164 format <br/> Email Channels: Contact Email address <br/> API Channel: Any Random String"
     },
     "contact_sort_param": {
       "in": "query",

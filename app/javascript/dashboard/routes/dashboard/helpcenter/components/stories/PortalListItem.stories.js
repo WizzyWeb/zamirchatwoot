@@ -34,10 +34,10 @@ PortalListItemView.args = {
   selectedLocaleCode: 'en-US',
   portals: [
     {
-      name: 'Chatshippo Help Center',
+      name: 'CEDUK Help Center',
       id: 1,
       color: 'red',
-      custom_domain: 'help-center.chatshippo.com',
+      custom_domain: 'help-center.mycodek.com',
       articles_count: 123,
       header_text: 'Help center',
       homepage_link: null,
@@ -103,7 +103,7 @@ PortalListItemView.args = {
       name: 'Chatwoot Docs',
       id: 2,
       color: 'green',
-      custom_domain: 'doc-chatshippo.com',
+      custom_domain: 'doc-mycodek.com',
       articles_count: 67,
       header_text: 'Docs',
       homepage_link: null,

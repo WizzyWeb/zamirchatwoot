@@ -12,7 +12,7 @@
 %>
 <script>
 
-window.chatshippoSettings = {
+window.CEDUKSettings = {
   hideMessageBubble: false,
   // baseDomain: '.loca.lt',
   position: '<%= @widget_position %>',
@@ -32,7 +32,7 @@ window.chatshippoSettings = {
   g.async = true;
   s.parentNode.insertBefore(g,s);
   g.onload=function(){
-    window.chatshippoSDK.run({
+    window.CEDUKSDK.run({
       websiteToken: '<%= @web_widget.website_token %>',
       baseUrl: BASE_URL
     })

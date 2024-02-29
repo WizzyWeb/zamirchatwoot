@@ -708,10 +708,10 @@ RSpec.describe Conversation do
   end
 
   describe 'validate valid referer url' do
-    let(:conversation) { create(:conversation, additional_attributes: { referer: 'https://www.chatshippo.com/' }) }
+    let(:conversation) { create(:conversation, additional_attributes: { referer: 'https://www.mycodek.com/' }) }
 
     it 'returns nil' do
-      expect(conversation['additional_attributes']['referer']).to eq('https://www.chatshippo.com/')
+      expect(conversation['additional_attributes']['referer']).to eq('https://www.mycodek.com/')
     end
   end
 

@@ -18,11 +18,11 @@ const runSDK = ({ baseUrl, websiteToken }) => {
     return;
   }
 
-  const chatshippoSettings = window.chatshippoSettings || {};
-  let locale = chatshippoSettings.locale;
-  let baseDomain = chatshippoSettings.baseDomain;
+  const CEDUKSettings = window.CEDUKSettings || {};
+  let locale = CEDUKSettings.locale;
+  let baseDomain = CEDUKSettings.baseDomain;
 
-  if (chatshippoSettings.useBrowserLanguage) {
+  if (CEDUKSettings.useBrowserLanguage) {
     locale = window.navigator.language.replace('-', '_');
   }
 
@@ -30,18 +30,18 @@ const runSDK = ({ baseUrl, websiteToken }) => {
     baseUrl,
     baseDomain,
     hasLoaded: false,
-    hideMessageBubble: chatshippoSettings.hideMessageBubble || false,
+    hideMessageBubble: CEDUKSettings.hideMessageBubble || false,
     isOpen: false,
-    position: chatshippoSettings.position === 'left' ? 'left' : 'right',
+    position: CEDUKSettings.position === 'left' ? 'left' : 'right',
     websiteToken,
     locale,
-    useBrowserLanguage: chatshippoSettings.useBrowserLanguage || false,
-    type: getBubbleView(chatshippoSettings.type),
-    launcherTitle: chatshippoSettings.launcherTitle || '',
-    showPopoutButton: chatshippoSettings.showPopoutButton || false,
-    widgetStyle: getWidgetStyle(chatshippoSettings.widgetStyle) || 'standard',
+    useBrowserLanguage: CEDUKSettings.useBrowserLanguage || false,
+    type: getBubbleView(CEDUKSettings.type),
+    launcherTitle: CEDUKSettings.launcherTitle || '',
+    showPopoutButton: CEDUKSettings.showPopoutButton || false,
+    widgetStyle: getWidgetStyle(CEDUKSettings.widgetStyle) || 'standard',
     resetTriggered: false,
-    darkMode: getDarkMode(chatshippoSettings.darkMode),
+    darkMode: getDarkMode(CEDUKSettings.darkMode),
 
     toggle(state) {
       IFrameHelper.events.toggleBubble(state);
@@ -179,6 +179,6 @@ const runSDK = ({ baseUrl, websiteToken }) => {
   });
 };
 
-window.chatshippoSDK = {
+window.CEDUKSDK = {
   run: runSDK,
 };
