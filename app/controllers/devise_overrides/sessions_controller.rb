@@ -15,12 +15,22 @@ class DeviseOverrides::SessionsController < DeviseTokenAuth::SessionsController
     end
   end
 
+  def new
+    redirect_to login_page_url(error: 'access-denied')
+  end
+
   def render_create_success
     render partial: 'devise/auth', formats: [:json], locals: { resource: @resource }
   end
 
   private
 
+  def login_page_url(error: nil)
+    frontend_url = ENV.fetch('FRONTEND_URL', nil)
+
+    "#{frontend_url}/app/login?error=#{error}"
+  end
+  
   def authenticate_resource_with_sso_token
     @token = @resource.create_token
     @resource.save!
