@@ -3,7 +3,7 @@
   "info": {
     "description": "This is the API documentation for CEDUK server.",
     "version": "1.0.0",
-    "title": "Chatwoot",
+    "title": "Codek",
     "termsOfService": "https://www.mycodek.com/terms-of-service/",
     "contact": {
       "email": "hello@mycodek.com"
@@ -2993,7 +2993,7 @@
                           "type": "object",
                           "description": "The processed param values for template variables in template",
                           "example": {
-                            "1": "Chatwoot"
+                            "1": "Codek"
                           }
                         }
                       }
@@ -6400,7 +6400,7 @@
               "type": "object",
               "description": "The processed param values for template variables in template",
               "example": {
-                "1": "Chatwoot"
+                "1": "Codek"
               }
             }
           }

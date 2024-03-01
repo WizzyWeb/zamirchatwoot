@@ -101,7 +101,11 @@ class ConversationFinder
 
   def find_all_conversations
     team_ids = @current_user.teams.pluck(:id)
-    @conversations = @current_user.administrator? ? current_account.conversations.where(inbox_id: @inbox_ids) : current_account.conversations.where(inbox_id: @inbox_ids, team_id: team_ids)
+    if @current_user.administrator? || @assignee_type == 'assigned'
+      @conversations = current_account.conversations.where(inbox_id: @inbox_ids)
+    else
+      @conversations = current_account.conversations.where(inbox_id: @inbox_ids, team_id: team_ids)
+    end
     filter_by_conversation_type if params[:conversation_type]
     @conversations
   end
