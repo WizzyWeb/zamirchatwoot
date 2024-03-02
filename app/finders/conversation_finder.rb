@@ -72,7 +72,7 @@ class ConversationFinder
     set_inboxes
     set_team
     set_assignee_type
-    return if @conversations.blank?
+    return if @conversations.nil?
     find_all_conversations
     filter_by_status unless params[:q]
     filter_by_team
