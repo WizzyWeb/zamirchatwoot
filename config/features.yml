@@ -56,6 +56,7 @@
   enabled: false
 - name: audit_logs
   enabled: false
+  premium:  true
 - name: response_bot
   enabled: false
   premium: true
