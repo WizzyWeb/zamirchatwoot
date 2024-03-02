@@ -108,6 +108,13 @@ export default {
     primaryMenuItems() {
       const menuItems = this.sideMenuConfig.primaryMenu;
       return menuItems.filter(menuItem => {
+        if (
+          menuItem.key === 'contacts' &&
+          this.currentRole === 'agent' &&
+          this.hideContactsForAgents
+        ) {
+          return false;
+        } 
         const isAvailableForTheUser = menuItem.roles.includes(this.currentRole);
 
         if (!isAvailableForTheUser) {
@@ -147,6 +154,15 @@ export default {
     },
   },
 
+  hideContactsForAgents() {
+      return (
+        this.isFeatureEnabledonAccount(
+          this.accountId,
+          'hide_contacts_for_agent'
+        ) && this.currentRole !== 'administrator'
+      );
+    },
+    
   watch: {
     activeCustomView() {
       this.fetchCustomViews();
