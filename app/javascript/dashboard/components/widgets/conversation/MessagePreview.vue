@@ -20,14 +20,6 @@
         icon="info"
       />
     </template>
-    <span v-if="message.content && isMessageSticker">
-      <fluent-icon
-        size="16"
-        class="-mt-0.5 align-middle inline-block text-slate-600 dark:text-slate-300"
-        icon="image"
-      />
-      {{ $t('CHAT_LIST.ATTACHMENTS.image.CONTENT') }}
-    </span>
     <span v-else-if="message.attachments">
       <fluent-icon
         v-if="attachmentIcon && showMessageType"
@@ -97,7 +89,7 @@ export default {
     isMessageSticker() {
       return this.message && this.message.content_type === 'sticker';
     },
-        isMessageImage() {
+    isMessageImage() {
       return this.message && this.parsedLastMessage.includes('.png') || this.parsedLastMessage.includes('.jpg');
     },
   },
