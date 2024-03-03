@@ -100,7 +100,7 @@ PortalListItemView.args = {
       ],
     },
     {
-      name: 'Chatwoot Docs',
+      name:'CEDUK Docs',
       id: 2,
       color: 'green',
       custom_domain: 'doc-mycodek.com',
