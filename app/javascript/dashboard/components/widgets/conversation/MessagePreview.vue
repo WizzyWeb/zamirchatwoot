@@ -20,6 +20,14 @@
         icon="info"
       />
     </template>
+    <span v-if="message.content && isMessageSticker">
+      <fluent-icon
+        size="16"
+        class="-mt-0.5 align-middle inline-block text-slate-600 dark:text-slate-300"
+        icon="image"
+      />
+      {{ $t(`${attachmentMessageContent}`) }}
+    </span>
     <span v-else-if="message.attachments">
       <fluent-icon
         v-if="attachmentIcon && showMessageType"
