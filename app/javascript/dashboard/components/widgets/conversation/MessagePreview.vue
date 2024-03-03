@@ -20,6 +20,21 @@
         icon="info"
       />
     </template>
+  <template>
+  <div class="message-container" :class="[message.content_type === 'image' ? 'image-message' : 'text-message']">
+    <template v-if="message.content_attributes && message.content_attributes.in_reply_to_external_id">
+      <!-- complete message display -->
+      <pre>{{ message.content }}</pre>
+    </template>
+    <template v-else>
+      <!-- alternative message display -->
+      <div class="truncated">
+        {{ truncate(message.content) }}
+      </div>
+    </template>
+  </div>
+</template>
+
     <span v-if="message.content && isMessageSticker">
       <fluent-icon
         size="16"
@@ -67,6 +82,12 @@ export default {
       type: String,
       default: '',
     },
+  },
+  methods: {
+    truncate(text, length = 100) {
+      if (text.length <= length) return text
+      return text.substring(0, length) + '...'
+    }
   },
   computed: {
     messageByAgent() {
