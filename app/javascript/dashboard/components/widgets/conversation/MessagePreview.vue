@@ -68,6 +68,15 @@ export default {
       default: '',
     },
   },
+<<<<<<< HEAD
+=======
+  methods: {
+    truncate(text, length = 100) {
+      if (text.length <= length) return text
+      return text.substring(0, length) + '...'
+    }
+  },
+>>>>>>> parent of e6f75ccd2 (Update MessagePreview.vue)
   computed: {
     messageByAgent() {
       const { message_type: messageType } = this.message;
