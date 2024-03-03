@@ -85,8 +85,8 @@ export default {
   },
   methods: {
     truncate(text, length = 100) {
-      if (text.length <= length) return text
-      return text.substring(0, length) + '...'
+      if (text.length <= length) return text;
+      return text.substring(0, length) + '...';
     }
   },
   computed: {
@@ -119,6 +119,12 @@ export default {
     },
     isMessageSticker() {
       return this.message && this.message.content_type === 'sticker';
+    },
+    isReply() {
+      return this.message.content_attributes && this.message.content_attributes.in_reply_to_external_id;
+    },
+    isImage() {
+      return this.message.content_type === 'image';
     },
   },
 };
