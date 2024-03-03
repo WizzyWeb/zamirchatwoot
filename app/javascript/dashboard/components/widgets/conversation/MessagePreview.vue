@@ -43,6 +43,12 @@
     <span v-else>
       {{ defaultEmptyMessage || $t('CHAT_LIST.NO_CONTENT') }}
     </span>
+    <span v-if="message.content && isImage(parsedLastMessage)">
+      <img :src="parsedLastMessage" class="your_image_class"/>
+    </span>
+    <span v-else-if="message.content">
+      {{ parsedLastMessage }}
+    </span>
   </div>
 </template>
 
@@ -82,16 +88,10 @@ export default {
       return isPrivate;
     },
     parsedLastMessage() {
-    const { content_attributes: contentAttributes, content } = this.message;
-    if (contentAttributes && contentAttributes.in_reply_to_external_id) {
-      // Complete message if in_reply_to_external_id exists
-      return content;
-    } else {
-      // Parse content if in_reply_to_external_id doesn't exist
+      const { content_attributes: contentAttributes } = this.message;
       const { email: { subject } = {} } = contentAttributes || {};
-      return this.getPlainText(subject || content);
-    }
-  },
+      return this.getPlainText(subject || this.message.content);
+    },
     lastMessageFileType() {
       const [{ file_type: fileType } = {}] = this.message.attachments;
       return fileType;
@@ -106,5 +106,11 @@ export default {
       return this.message && this.message.content_type === 'sticker';
     },
   },
+  methods: {
+    isImage(message) {
+      // Update your image validation based on the requirement.
+      return message.startsWith('http://') || message.startsWith('https://');
+    }
+  }
 };
 </script>
