@@ -20,33 +20,6 @@
         icon="info"
       />
     </template>
-    <template>
-<div>
-      <div v-if="isReply">
-          <div>
-              Original Message: 
-              <div v-if="replySource">
-                <div v-if="replySource.message_type === 'image'">
-                  <img :src="replySource.content" alt="Image message" />
-                </div>
-                <div v-else>
-                  <pre>{{ replySource.content }}</pre>
-                </div>
-              </div>
-              <div v-else>
-                Loading original message...
-              </div>
-          </div>
-          <div>
-              Reply: 
-              <pre>{{ message.content }}</pre>
-          </div>
-      </div>
-      <div v-else>
-        <pre>{{ message.content }}</pre>
-      </div>
-</div>
-</template>
     <span v-if="message.content && isMessageSticker">
       <fluent-icon
         size="16"
@@ -77,7 +50,6 @@
 import { MESSAGE_TYPE } from 'widget/helpers/constants';
 import messageFormatterMixin from 'shared/mixins/messageFormatterMixin';
 import { ATTACHMENT_ICONS } from 'shared/constants/messages';
-import { mapState } from 'vuex';
 
 export default {
   name: 'MessagePreview',
@@ -95,12 +67,6 @@ export default {
       type: String,
       default: '',
     },
-  },
-  methods: {
-    truncate(text, length = 100) {
-      if (text.length <= length) return text
-      return text.substring(0, length) + '...'
-    }
   },
   computed: {
     messageByAgent() {
@@ -132,14 +98,6 @@ export default {
     },
     isMessageSticker() {
       return this.message && this.message.content_type === 'sticker';
-    },
-    ...mapState('messages', ['messages']),
-    isReply() {
-      return !!this.message.content_attributes?.in_reply_to_external_id;
-    },
-    replySource() {
-      if (!this.isReply) return null;
-      return this.messages[this.message.content_attributes.in_reply_to_external_id];
     },
   },
 };
