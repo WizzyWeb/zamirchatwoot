@@ -21,23 +21,31 @@
       />
     </template>
     <template>
-  <div class="message-container">
-    <template v-if="isReply">
-      <!-- complete message display -->
-      <div v-if="isImage">
-        <img :src="message.content" alt="Image message">
+<div>
+      <div v-if="isReply">
+          <div>
+              Original Message: 
+              <div v-if="replySource">
+                <div v-if="replySource.message_type === 'image'">
+                  <img :src="replySource.content" alt="Image message" />
+                </div>
+                <div v-else>
+                  <pre>{{ replySource.content }}</pre>
+                </div>
+              </div>
+              <div v-else>
+                Loading original message...
+              </div>
+          </div>
+          <div>
+              Reply: 
+              <pre>{{ message.content }}</pre>
+          </div>
       </div>
       <div v-else>
         <pre>{{ message.content }}</pre>
       </div>
-    </template>
-    <template v-else>
-      <!-- alternative message display -->
-      <div class="truncated">
-        {{ truncate(message.content) }}
-      </div>
-    </template>
-  </div>
+</div>
 </template>
     <span v-if="message.content && isMessageSticker">
       <fluent-icon
@@ -69,6 +77,7 @@
 import { MESSAGE_TYPE } from 'widget/helpers/constants';
 import messageFormatterMixin from 'shared/mixins/messageFormatterMixin';
 import { ATTACHMENT_ICONS } from 'shared/constants/messages';
+import { mapState } from 'vuex';
 
 export default {
   name: 'MessagePreview',
@@ -124,11 +133,13 @@ export default {
     isMessageSticker() {
       return this.message && this.message.content_type === 'sticker';
     },
+    ...mapState('messages', ['messages']),
     isReply() {
-      return this.message.content_attributes && this.message.content_attributes.in_reply_to_external_id;
+      return !!this.message.content_attributes?.in_reply_to_external_id;
     },
-    isImage() {
-      return this.message.content_type === 'image';
+    replySource() {
+      if (!this.isReply) return null;
+      return this.messages[this.message.content_attributes.in_reply_to_external_id];
     },
   },
 };
