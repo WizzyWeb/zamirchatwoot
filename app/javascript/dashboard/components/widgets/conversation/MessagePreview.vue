@@ -111,7 +111,7 @@ export default {
       if (!this.isImageMessage) return '';
       // Assuming the first attachment is the image you want to display
       // Adjust accordingly if your data structure requires
-      return this.message.attachments[0].url; // Adjust the property path as needed
+      return this.message.attachments[0].data_url; // Adjust the property path as needed
     },
   },
 };
