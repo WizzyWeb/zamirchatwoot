@@ -94,8 +94,15 @@ export default {
       return ATTACHMENT_ICONS[this.lastMessageFileType];
     },
     attachmentMessageContent() {
-      return `CHAT_LIST.ATTACHMENTS.${this.lastMessageFileType}.CONTENT`;
-    },
+    // Directly return the message content if the last message file type is 'image'
+    if (this.lastMessageFileType === 'image') {
+      // This assumes you want to show the message.content directly for images
+      // Ensure the message content is suitable for direct display
+      return this.message.content;
+    }
+    // For other file types, continue using the localized string based on the file type
+    return `CHAT_LIST.ATTACHMENTS.${this.lastMessageFileType}.CONTENT`;
+  },
     isMessageSticker() {
       return this.message && this.message.content_type === 'sticker';
     },
