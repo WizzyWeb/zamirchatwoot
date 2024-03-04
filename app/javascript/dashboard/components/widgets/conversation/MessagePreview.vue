@@ -20,9 +20,6 @@
         icon="info"
       />
     </template>
-    <template v-if="isImageMessage">
-      <img :src="imageSrc" alt="Image attachment" class="max-w-full h-auto" />
-    </template>
     <span v-if="message.content && isMessageSticker">
       <fluent-icon
         size="16"
@@ -96,29 +93,18 @@ export default {
     attachmentIcon() {
       return ATTACHMENT_ICONS[this.lastMessageFileType];
     },
-    attachmentMessageContent() {
+  attachmentMessageContent() {
     // Directly return the message content if the last message file type is 'image'
-     if (this.lastMessageFileType === 'image') {
+    if (this.lastMessageFileType === 'image') {
       // This assumes you want to show the message.content directly for images
       // Ensure the message content is suitable for direct display
-      return this.message.content;
+      return this.message.attachments;
     }
     // For other file types, continue using the localized string based on the file type
     return `CHAT_LIST.ATTACHMENTS.${this.lastMessageFileType}.CONTENT`;
-   },
+  },
     isMessageSticker() {
       return this.message && this.message.content_type === 'sticker';
-    },
-    isImageMessage() {
-      // Assuming you have a way to determine if the message is an image
-      // This could be based on the presence of attachments and a specific file type
-      return this.lastMessageFileType === 'image' && this.message.attachments.length > 0;
-    },
-    imageSrc() {
-      if (!this.isImageMessage) return '';
-      // Assuming the first attachment is the image you want to display
-      // Adjust accordingly if your data structure requires
-      return this.message.attachments[0].url; // Adjust the property path as needed
     },
   },
 };
