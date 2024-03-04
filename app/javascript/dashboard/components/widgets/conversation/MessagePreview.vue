@@ -20,9 +20,6 @@
         icon="info"
       />
     </template>
-    <template v-if="isImageMessage">
-      <img :src="imageSrc" alt="Image attachment" class="max-w-full h-auto" />
-    </template>
     <span v-if="message.content && isMessageSticker">
       <fluent-icon
         size="16"
@@ -101,17 +98,6 @@ export default {
     },
     isMessageSticker() {
       return this.message && this.message.content_type === 'sticker';
-    },
-    isImageMessage() {
-      // Assuming you have a way to determine if the message is an image
-      // This could be based on the presence of attachments and a specific file type
-      return this.lastMessageFileType === 'image' && this.message.attachments.length > 0;
-    },
-    imageSrc() {
-      if (!this.isImageMessage) return '';
-      // Assuming the first attachment is the image you want to display
-      // Adjust accordingly if your data structure requires
-      return this.message.attachments[0].data_url; // Adjust the property path as needed
     },
   },
 };
